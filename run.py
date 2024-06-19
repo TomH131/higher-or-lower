@@ -17,5 +17,12 @@ def check_answer(guess, number):
         print("Unlucky! Please guess a higher number.")
     return False
 
+def start_game():
+    number = random_number()
+    correct = False
+    while not correct:
+        guess = guess_number()
+        correct = check_answer(guess, number)
 
+start_game()
 
