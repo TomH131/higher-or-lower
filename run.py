@@ -12,12 +12,12 @@ def guess_number():
     their guess
     """
     while True:
-        print("Please guess a number between 1 and 100")
-        guess = int(input("Input your number here:\n"))
-        if validate_guess(guess):
-            break
-
-    return guess
+        try:
+            guess = int(input("Please guess a number between 1 and 100:\n"))
+            if validate_guess(guess):
+                return guess
+        except ValueError:
+            print("That's not a valid number! Please try again.\n")
     
 def validate_guess(guess):
     """
