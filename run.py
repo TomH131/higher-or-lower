@@ -23,7 +23,7 @@ def validate_guess(guess):
     """
     Checking the number guessed is valid
     """
-    if guess != range(1, 101):
+    if guess < 1 or guess > 100:
         raise ValueError("Please enter a valid number between 1 and 100.")
         return False
     return True
@@ -34,10 +34,10 @@ def check_answer(guess, number):
     let the user know if they are correct or whether they need to 
     guess a higher or lower number
     """
-    if guess == number():
+    if guess == number:
         print("Congratulations! You guessed the correct number.")
         return True
-    elif guess > number():
+    elif guess > number:
         print("Unlucky! Please guess a lower number.")
     else:
         print("Unlucky! Please guess a higher number.")
