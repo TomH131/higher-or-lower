@@ -11,8 +11,23 @@ def guess_number():
     This will allow the user to input a number in order to make
     their guess
     """
-    return int(input("Please guess a number between 1 and 100:\n"))
+    while True:
+        print("Please guess a number between 1 and 100")
+        guess = int(input("Input your number here:\n"))
+        if validate_guess(guess):
+            break
+
+    return guess
     
+def validate_guess(guess):
+    """
+    Checking the number guessed is valid
+    """
+    if guess != range(1, 101):
+        raise ValueError("Please enter a valid number between 1 and 100.")
+        return False
+    return True
+
 def check_answer(guess, number):
     """
     This will check the user's guess against the random number and
