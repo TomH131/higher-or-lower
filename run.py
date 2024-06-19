@@ -17,14 +17,14 @@ def guess_number():
             if validate_guess(guess):
                 return guess
         except ValueError:
-            print("That's not a valid number! Please try again.\n")
-    
+            print("That's not a valid number! Please enter an number between 1 and 100.\n")
+
 def validate_guess(guess):
     """
-    Checking the number guessed is valid
+    Checking the number guessed is valid.
     """
     if guess < 1 or guess > 100:
-        raise ValueError("Please enter a valid number between 1 and 100.")
+        print(f"You entered {guess}. Please enter a number between 1 and 100.")
         return False
     return True
 
