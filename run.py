@@ -37,12 +37,14 @@ def check_answer(guess, number, attempts):
     if guess == number:
         print("Congratulations! You guessed the correct number.")
         return True
-    elif guess > number:
-        print("Unlucky! Please guess a lower number.")
-    elif guess < number: 
-        print("Unlucky! Please guess a higher number.")
     if attempts == 4:
         print(f"Unfortunately, you've now run out of attempts. The number was {number}.")
+        return False
+    if guess > number:
+        print("Unlucky! Please guess a lower number.")
+    else: 
+        print("Unlucky! Please guess a higher number.")
+    
     return False
 
 def start_game():
