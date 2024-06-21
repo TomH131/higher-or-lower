@@ -62,4 +62,4 @@ def start_game():
 print("Welcome to a game of higher or lower. You will have 5 attempts to guess a random number between 1 and 100.")
 start_game()
 
-# Timer, Difficulty level (10, 50, 100)
+# Timer, Difficulty level (10, 50, 100), warm/cold
