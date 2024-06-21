@@ -13,7 +13,7 @@ def guess_number():
     """
     while True:
         try:
-            guess = int(input("Please guess a number between 1 and 100:\n"))
+            guess = int(input("Please input your guess here:\n"))
             if validate_guess(guess):
                 return guess
         except ValueError:
@@ -59,4 +59,7 @@ def start_game():
         correct = check_answer(guess, number, attempts)
         attempts += 1
 
+print("Welcome to a game of higher and lower. You will have 5 attempts to guess a random number between 1 and 100.")
 start_game()
+
+# Timer, Difficulty level (10, 50, 100)
