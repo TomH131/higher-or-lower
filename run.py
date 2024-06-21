@@ -2,7 +2,7 @@ from random import randint
 
 def random_number():
     """
-    This function will  return a random number between 1 and 100
+    This function will return a random number between 1 and 100
     """
     return randint(1, 100)
 
@@ -17,7 +17,7 @@ def guess_number():
             if validate_guess(guess):
                 return guess
         except ValueError:
-            print("That's not a valid number! Please enter an number between 1 and 100.\n")
+            print("That's not a valid number! Please enter a number between 1 and 100.\n")
 
 def validate_guess(guess):
     """
@@ -28,7 +28,7 @@ def validate_guess(guess):
         return False
     return True
 
-def check_answer(guess, number):
+def check_answer(guess, number, attempts):
     """
     This will check the user's guess against the random number and
     let the user know if they are correct or whether they need to 
@@ -39,19 +39,22 @@ def check_answer(guess, number):
         return True
     elif guess > number:
         print("Unlucky! Please guess a lower number.")
-    else:
+    elif guess < number: 
         print("Unlucky! Please guess a higher number.")
+    if attempts == 4:
+        print(f"Unfortunately, you've now run out of attempts. The number was {number}.")
     return False
 
 def start_game():
     """
-    This function will start the game and also check for correct answer
+    This function will start the game
     """
     number = random_number()
     correct = False
-    while not correct:
+    attempts = 0
+    while not correct and attempts < 5:
         guess = guess_number()
-        correct = check_answer(guess, number)
+        correct = check_answer(guess, number, attempts)
+        attempts += 1
 
 start_game()
-
