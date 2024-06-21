@@ -59,7 +59,7 @@ def start_game():
         correct = check_answer(guess, number, attempts)
         attempts += 1
 
-print("Welcome to a game of higher and lower. You will have 5 attempts to guess a random number between 1 and 100.")
+print("Welcome to a game of higher or lower. You will have 5 attempts to guess a random number between 1 and 100.")
 start_game()
 
 # Timer, Difficulty level (10, 50, 100)
