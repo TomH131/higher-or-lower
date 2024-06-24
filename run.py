@@ -1,8 +1,8 @@
 from random import randint
 
-def random_number():
+def random_number(difficulty):
     """
-    This function will return a random number between 1 and 100
+    This function will return a random number depending on the difficulty level chosen.
     """
     if difficulty == "easy":
         return randint(1, 25)
@@ -11,7 +11,18 @@ def random_number():
     elif difficulty == "hard":
         return randint(1, 200)
 
-def guess_number():
+def check_difficulty():
+    """
+    This is to check the user has selected one of the three difficulty options.
+    """
+    while True:
+        difficulty = input("Choose the difficulty level (easy, medium or hard): \n").lower()
+        if difficulty in ["easy", "medium", "hard"]:
+            return difficulty
+        else:
+            print("Sorry, please select one of the difficulty options: easy, medium, or hard")
+
+def guess_number(difficulty):
     """
     This will allow the user to input a number in order to make
     their guess
@@ -19,12 +30,12 @@ def guess_number():
     while True:
         try:
             guess = int(input("Input your guess here:\n"))
-            if validate_guess(guess):
+            if validate_guess(guess, difficulty):
                 return guess
         except ValueError:
             print("That's not a valid number! Please enter a number between 1 and 100.\n")
 
-def validate_guess(guess):
+def validate_guess(guess, difficulty):
     """
     Checking the number guessed is valid.
     """
@@ -82,11 +93,12 @@ def start_game():
     """
     This function will start the game
     """
-    number = random_number()
+    difficulty = check_difficulty()
+    number = random_number(difficulty)
     correct = False
     attempts = 0
     while not correct and attempts < 5:
-        guess = guess_number()
+        guess = guess_number(difficulty)
         warm_cold(guess, number) 
         correct = check_answer(guess, number, attempts)
         attempts += 1
@@ -95,7 +107,6 @@ print("Welcome to a game of higher or lower.")
 print("You will have 5 attempts to guess a random number with a range depending on the difficulty level you choose.\n")
 print("If you choose easy you will have to guess a number between 1 and 25.")
 print("Medium is a number between 1 and 100. Hard is a number between 1 and 200. Good luck!\n")
-difficulty = input("Choose the difficulty level (easy, medium or hard): \n").lower()
 start_game()
 
 # Timer, Difficulty level (10, 50, 100)
