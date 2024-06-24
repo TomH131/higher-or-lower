@@ -1,8 +1,10 @@
 from random import randint
 
+
 def random_number(difficulty):
     """
-    This function will return a random number with a range dependent on the difficulty level chosen.
+    This function will return a random number with a range
+    dependent on the difficulty level chosen.
     """
     if difficulty == "easy":
         return randint(1, 25)
@@ -11,16 +13,24 @@ def random_number(difficulty):
     elif difficulty == "hard":
         return randint(1, 200)
 
+
 def check_difficulty():
     """
-    This is to let the user choose the difficulty level and make sure one of three options has been chosen.
+    This is to let the user choose the difficulty level and
+    make sure one of three options has been chosen.
     """
     while True:
-        difficulty = input("Choose the difficulty level (easy, medium or hard): \n").lower()
+        difficulty = input(
+            "Choose the difficulty level (easy, medium or hard): \n"
+        ).lower()
         if difficulty in ["easy", "medium", "hard"]:
             return difficulty
         else:
-            print("Sorry, please select one of the difficulty options: easy, medium, or hard. \n")
+            print(
+                "Sorry, please select one of the difficulty options: "
+                "easy, medium, or hard. \n"
+            )
+
 
 def guess_number(difficulty):
     """
@@ -34,51 +44,66 @@ def guess_number(difficulty):
         except ValueError:
             print("That's not a number! Please enter a number.\n")
 
+
 def validate_guess(guess, difficulty):
     """
     Checking the number guessed is valid.
     """
     if difficulty == "easy":
         if guess < 1 or guess > 25:
-            print(f"You entered {guess}. Please enter a number between 1 and 25.\n")
+            print(
+                f"""You entered {guess}. Please enter a number
+                between 1 and 25.\n"""
+            )
             return False
     elif difficulty == "medium":
         if guess < 1 or guess > 100:
-            print(f"You entered {guess}. Please enter a number between 1 and 100.\n")
+            print(
+                f"""You entered {guess}. Please enter a number
+                between 1 and 100.\n"""
+            )
             return False
     else:
         if guess < 1 or guess > 200:
-            print(f"You entered {guess}. Please enter a number between 1 and 200.\n")
+            print(
+                f"""You entered {guess}. Please enter a number
+            between 1 and 200.\n"""
+            )
             return False
     return True
+
 
 def check_answer(guess, number, attempts):
     """
     This will check the user's guess against the random number and
-    let the user know if they are correct or whether they need to 
+    let the user know if they are correct or whether they need to
     guess a higher or lower number
     """
     if guess == number:
         print("Congratulations! You guessed the correct number.\n")
         return True
     if attempts == 4:
-        print(f"Unfortunately, you've now run out of attempts. The number was {number}.\n")
+        print(
+            f"""Unfortunately, you've now run out of attempts.
+            The number was {number}.\n"""
+        )
         return False
     if guess > number:
         print("Please guess a lower number.\n")
-    else: 
+    else:
         print("Please guess a higher number.\n")
-    
+
     return False
+
 
 def warm_cold(guess, number):
     """
     This will give the user some idea of how close they are to the answer
     """
     difference = abs(number - guess)
-    
+
     if difference == 0:
-        return 
+        return
     elif difference <= 2:
         print("You're scorching!")
     elif difference <= 10:
@@ -87,6 +112,7 @@ def warm_cold(guess, number):
         print("You're cold.")
     else:
         print("You're freezing.")
+
 
 def start_game():
     """
@@ -98,12 +124,18 @@ def start_game():
     attempts = 0
     while not correct and attempts < 5:
         guess = guess_number(difficulty)
-        warm_cold(guess, number) 
+        warm_cold(guess, number)
         correct = check_answer(guess, number, attempts)
         attempts += 1
 
-print("Welcome to a game of higher or lower.")
-print("You will have 5 attempts to guess a random number with a range depending on the difficulty level you choose.\n")
-print("If you choose easy you will have to guess a number between 1 and 25.")
-print("Medium is a number between 1 and 100 and hard is a number between 1 and 200. Good luck!\n")
+
+print(
+    """Welcome to a game of higher or lower.\n
+You will have 5 attempts to guess a random number with
+a range depending on the difficulty level you choose.\n
+If you choose easy you will have to guess a number between 1 and 25.
+Medium is a number between 1 and 100 and hard is a number between 1
+and 200. Good luck!\n"""
+)
+
 start_game()
