@@ -5,11 +5,11 @@ def random_number():
     This function will return a random number between 1 and 100
     """
     if difficulty == "easy":
-        return randint(1, 10)
+        return randint(1, 25)
     elif difficulty == "medium":
-        return randint(1, 50)
-    elif difficulty == "hard":
         return randint(1, 100)
+    elif difficulty == "hard":
+        return randint(1, 200)
 
 def guess_number():
     """
@@ -29,16 +29,16 @@ def validate_guess(guess):
     Checking the number guessed is valid.
     """
     if difficulty == "easy":
-        if guess < 1 or guess > 10:
-            print(f"You entered {guess}. Please enter a number between 1 and 10")
+        if guess < 1 or guess > 25:
+            print(f"You entered {guess}. Please enter a number between 1 and 25")
             return False
     elif difficulty == "medium":
-        if guess < 1 or guess > 50:
-            print(f"You entered {guess}. Please enter a number between 1 and 50")
+        if guess < 1 or guess > 100:
+            print(f"You entered {guess}. Please enter a number between 1 and 100")
             return False
     else:
-        if guess < 1 or guess > 100:
-            print(f"You entered {guess}. Please enter a number between 1 and 100.")
+        if guess < 1 or guess > 200:
+            print(f"You entered {guess}. Please enter a number between 1 and 200.")
             return False
     return True
 
@@ -91,7 +91,10 @@ def start_game():
         correct = check_answer(guess, number, attempts)
         attempts += 1
 
-print("Welcome to a game of higher or lower. You will have 5 attempts to guess a random number between 1 and 100.")
+print("Welcome to a game of higher or lower.")
+print("You will have 5 attempts to guess a random number with a range depending on the difficulty level you choose.\n")
+print("If you choose easy you will have to guess a number between 1 and 25.")
+print("Medium is a number between 1 and 100. Hard is a number between 1 and 200. Good luck!\n")
 difficulty = input("Choose the difficulty level (easy, medium or hard): \n").lower()
 start_game()
 
