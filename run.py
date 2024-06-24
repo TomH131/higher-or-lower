@@ -22,7 +22,7 @@ def check_difficulty():
     while True:
         difficulty = input(
             "Choose the difficulty level (easy, medium or hard): \n"
-        ).lower()
+        ).lower().strip()
         if difficulty in ["easy", "medium", "hard"]:
             return difficulty
         else:
