@@ -4,7 +4,12 @@ def random_number():
     """
     This function will return a random number between 1 and 100
     """
-    return randint(1, 100)
+    if difficulty == "easy":
+        return randint(1, 10)
+    elif difficulty == "medium":
+        return randint(1, 50)
+    elif difficulty == "hard":
+        return randint(1, 100)
 
 def guess_number():
     """
@@ -23,9 +28,18 @@ def validate_guess(guess):
     """
     Checking the number guessed is valid.
     """
-    if guess < 1 or guess > 100:
-        print(f"You entered {guess}. Please enter a number between 1 and 100.")
-        return False
+    if difficulty == "easy":
+        if guess < 1 or guess > 10:
+            print(f"You entered {guess}. Please enter a number between 1 and 10")
+            return False
+    elif difficulty == "medium":
+        if guess < 1 or guess > 50:
+            print(f"You entered {guess}. Please enter a number between 1 and 50")
+            return False
+    else:
+        if guess < 1 or guess > 100:
+            print(f"You entered {guess}. Please enter a number between 1 and 100.")
+            return False
     return True
 
 def check_answer(guess, number, attempts):
@@ -78,6 +92,7 @@ def start_game():
         attempts += 1
 
 print("Welcome to a game of higher or lower. You will have 5 attempts to guess a random number between 1 and 100.")
+difficulty = input("Choose the difficulty level (easy, medium or hard): \n").lower()
 start_game()
 
 # Timer, Difficulty level (10, 50, 100)
