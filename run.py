@@ -20,9 +20,11 @@ def check_difficulty():
     make sure one of three options has been chosen.
     """
     while True:
-        difficulty = input(
-            "Choose the difficulty level (easy, medium or hard): \n"
-        ).lower().strip()
+        difficulty = (
+            input("Choose the difficulty level (easy, medium or hard): \n")
+            .lower()
+            .strip()
+        )
         if difficulty in ["easy", "medium", "hard"]:
             return difficulty
         else:
@@ -53,21 +55,21 @@ def validate_guess(guess, difficulty):
         if guess < 1 or guess > 25:
             print(
                 f"""You entered {guess}. Please enter a number
-                between 1 and 25.\n"""
+between 1 and 25.\n"""
             )
             return False
     elif difficulty == "medium":
         if guess < 1 or guess > 100:
             print(
                 f"""You entered {guess}. Please enter a number
-                between 1 and 100.\n"""
+between 1 and 100.\n"""
             )
             return False
     else:
         if guess < 1 or guess > 200:
             print(
                 f"""You entered {guess}. Please enter a number
-            between 1 and 200.\n"""
+between 1 and 200.\n"""
             )
             return False
     return True
@@ -85,7 +87,7 @@ def check_answer(guess, number, attempts):
     if attempts == 4:
         print(
             f"""Unfortunately, you've now run out of attempts.
-            The number was {number}.\n"""
+The number was {number}.\n"""
         )
         return False
     if guess > number:
