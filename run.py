@@ -95,6 +95,7 @@ The number was {number}.\n"""
     else:
         print("Please guess a higher number.\n")
 
+    print(f"You have {4 - attempts} attempts left.")
     return False
 
 
@@ -118,12 +119,19 @@ def warm_cold(guess, number):
 
 def start_game():
     """
-    This function will start the game
+    This function will start the game, assign the number,
+    start the attempts of at 0.
     """
     difficulty = check_difficulty()
     number = random_number(difficulty)
     correct = False
     attempts = 0
+
+    """
+    This will keep the game running until the correct answer
+    is given or until the user has reached 5 attempts. Also
+    provides feedback and increases the attempts by 1.
+    """
     while not correct and attempts < 5:
         guess = guess_number(difficulty)
         warm_cold(guess, number)
