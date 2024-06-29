@@ -12,6 +12,8 @@ def random_number(difficulty):
         return randint(1, 100)
     elif difficulty == "hard":
         return randint(1, 200)
+    elif difficulty == "extreme":
+        return randint(1, 1000)
 
 
 def check_difficulty():
@@ -21,16 +23,16 @@ def check_difficulty():
     """
     while True:
         difficulty = (
-            input("Choose the difficulty level (easy, medium or hard): \n")
+            input("Choose the difficulty level (easy, medium, hard or extreme): \n")
             .lower()
             .strip()
         )
-        if difficulty in ["easy", "medium", "hard"]:
+        if difficulty in ["easy", "medium", "hard", "extreme"]:
             return difficulty
         else:
             print(
                 "Sorry, please select one of the difficulty options: "
-                "easy, medium, or hard. \n"
+                "easy, medium, hard or extreme. \n"
             )
 
 
@@ -54,7 +56,8 @@ def validate_guess(guess, difficulty):
     ranges = {
         "easy": (1, 25),
         "medium": (1, 100),
-        "hard": (1, 200)
+        "hard": (1, 200),
+        "extreme": (1, 1000)
         }
 
     low, high = ranges[difficulty]
@@ -159,7 +162,8 @@ You will have 5 attempts to guess a random number with
 a range depending on the difficulty level you choose.\n
 If you choose easy you will have to guess a number between 1 and 25.
 Medium is a number between 1 and 100 and hard is a number between 1
-and 200. Good luck!\n"""
+and 200. Or you can attempt extreme and try to guess a number between
+1 and 1000. Good luck!\n"""
 )
 
 start_game()

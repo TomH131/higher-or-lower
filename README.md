@@ -8,7 +8,7 @@ The user has five attempts to correctly guess the number the game has randomly s
 ![Responsive mockup](assets/images/higher-or-lower-mockup.png)
 
 ## Features
-The game begins with an introduction that explains what the user needs to do and describes the different difficulty levels. The user then chooses between easy, medium, and hard difficulty levels. As the difficulty level increases, the range from which the game randomly selects a number becomes wider. 
+The game begins with an introduction that explains what the user needs to do and describes the different difficulty levels. The user then chooses between easy, medium, hard and exteme difficulty levels. As the difficulty level increases, the range from which the game randomly selects a number becomes wider. 
 
 ![Opening message and choosing difficulty](assets/images/opening-and-difficulty.png)
 
