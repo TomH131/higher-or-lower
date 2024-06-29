@@ -51,27 +51,19 @@ def validate_guess(guess, difficulty):
     """
     Checking the number guessed is valid.
     """
-    if difficulty == "easy":
-        if guess < 1 or guess > 25:
-            print(
-                f"""You entered {guess}. Please enter a number
-between 1 and 25.\n"""
-            )
-            return False
-    elif difficulty == "medium":
-        if guess < 1 or guess > 100:
-            print(
-                f"""You entered {guess}. Please enter a number
-between 1 and 100.\n"""
-            )
-            return False
-    else:
-        if guess < 1 or guess > 200:
-            print(
-                f"""You entered {guess}. Please enter a number
-between 1 and 200.\n"""
-            )
-            return False
+    ranges = {
+        "easy": (1, 25), 
+        "medium": (1, 100), 
+        "hard": (1, 200)
+        }
+
+    low, high = ranges[difficulty]
+    if not (low <= guess <= high):
+        print(
+            f"""You entered {guess}. Please enter a number
+between {low} and {high}.\n"""
+        )
+        return False
     return True
 
 
@@ -137,7 +129,7 @@ def start_game():
         warm_cold(guess, number)
         correct = check_answer(guess, number, attempts)
         attempts += 1
-    
+
     new_game()
 
 
@@ -146,7 +138,12 @@ def new_game():
     This function is to give the user the opportunity to play again
     """
     while True:
-        response = input("Would you like to play again? (yes/no)\n").lower().strip()
+        response = (
+            input("Would you like to play again? (yes/no)\n")
+            .lower()
+            .strip()
+            )
+
         if response == "yes":
             start_game()
         elif response == "no":
