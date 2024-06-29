@@ -3,6 +3,8 @@ Higher or lower is a Python terminal game, which runs in the Code Institute mock
 
 The user has five attempts to correctly guess the number the game has randomly selected. 
 
+[Live version of the game](https://higher-or-lower131-f3d3fa4260b3.herokuapp.com/)
+
 ![Responsive mockup](assets/images/higher-or-lower-mockup.png)
 
 ## Features
@@ -34,11 +36,11 @@ I have tested this project in the following ways:
 
 ### Manual testing
 Where the user needs to input data I have tested the input in the following ways:
- - response all in capitals
- - all in lowercase
- - numbers where letters were required and letters where numbers were required
- - a combination of numbers and letters
- - a space before and after the input
+ - Response all in capitals.
+ - All in lowercase.
+ - Numbers where letters were required and letters where numbers were required.
+ - A combination of numbers and letters.
+ - A space before and after the input.
 
  All possible responses are handled by the code and where necessary they ask the user to input their response in the correct format. The user receives a message if their guess is outside the range. For example if they choose "easy" and then guess a number higher than 25 they receive some feedback asking for another guess. 
 
@@ -48,4 +50,11 @@ Where the user needs to input data I have tested the input in the following ways
  This project has been deployed on the Code Institute's mock terminal for Heroku.
 
  Steps taken for deployment:
+  - Create a new app in Heroku.
+  - Set the buildpacks to .Python and .NodeJS in that order.
+  - Link the new app to the repository in GitHub.
+  - Deploy the app.
+
+## Credits
+- Code Institute for the deployment terminal
  
