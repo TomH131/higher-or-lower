@@ -1,32 +1,51 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Higher or Lower
+Higher or lower is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 
-Welcome,
+The user has five attempts to correctly guess the number the game has randomly selected. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+![Responsive mockup](assets/images/higher-or-lower-mockup.png)
 
-## Reminders
+## Features
+The game begins with an introduction that explains what the user needs to do and describes the different difficulty levels. The user then chooses between easy, medium, and hard difficulty levels. As the difficulty level increases, the range from which the game randomly selects a number becomes wider. 
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+![Opening message and choosing difficulty](assets/images/opening-and-difficulty.png)
 
-## Creating the Heroku app
+Once a difficulty has been selected a number is randomly generated and the terminal asks the user to input their first guess.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+![Input guess](assets/images/input-guess.png)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+After each guess has been made the user is given feedback, letting them know how many attempts they have left, whether they need to guess a higher or lower number and also a temperature system to give them some idea of how close to the answer they are.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+![Feedback](assets/images/feedback.png)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Whether they are successful in guessing the correct answer or they run out of attempts the user is then asked if they would like to play another game.
 
-Connect your GitHub repository and deploy as normal.
+![New game](assets/images/new-game.png)
 
-## Constraints
+## Testing
+I have tested this project in the following ways:
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+### PEP8 linter
+ - I copied all the code in the run.py file
+ - Opened the [PEP8 linter](https://pep8ci.herokuapp.com/) website and pasted in my code
+ - The feedback came back positive with no errors found.
 
----
+![PEP8 feedback](assets/images/pep8-feedback.png)
 
-Happy coding!
+### Manual testing
+Where the user needs to input data I have tested the input in the following ways:
+ - response all in capitals
+ - all in lowercase
+ - numbers where letters were required and letters where numbers were required
+ - a combination of numbers and letters
+ - a space before and after the input
+
+ All possible responses are handled by the code and where necessary they ask the user to input their response in the correct format. The user receives a message if their guess is outside the range. For example if they choose "easy" and then guess a number higher than 25 they receive some feedback asking for another guess. 
+
+ ![Outside the range feedback](assets/images/range-feedback.png)
+
+ ## Deployment
+ This project has been deployed on the Code Institute's mock terminal for Heroku.
+
+ Steps taken for deployment:
+ 
