@@ -124,6 +124,7 @@ def start_game():
     """
     difficulty = check_difficulty()
     number = random_number(difficulty)
+    print(number)
     correct = False
     attempts = 0
 
@@ -137,6 +138,23 @@ def start_game():
         warm_cold(guess, number)
         correct = check_answer(guess, number, attempts)
         attempts += 1
+    
+    new_game()
+
+
+def new_game():
+    """
+    This function is to give the user the opportunity to play again
+    """
+    while True:
+        response = input("Would you like to play again? (yes/no)\n").lower().strip()
+        if response == "yes":
+            start_game()
+        elif response == "no":
+            print("Thank you for playing.")
+            return False
+        else:
+            print("Invalid input. Please enter 'yes or 'no'.")
 
 
 print(
