@@ -52,8 +52,8 @@ def validate_guess(guess, difficulty):
     Checking the number guessed is valid.
     """
     ranges = {
-        "easy": (1, 25), 
-        "medium": (1, 100), 
+        "easy": (1, 25),
+        "medium": (1, 100),
         "hard": (1, 200)
         }
 
