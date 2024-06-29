@@ -124,7 +124,6 @@ def start_game():
     """
     difficulty = check_difficulty()
     number = random_number(difficulty)
-    print(number)
     correct = False
     attempts = 0
 
