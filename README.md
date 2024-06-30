@@ -1,7 +1,7 @@
 # Higher or Lower
 Higher or lower is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 
-The user has five attempts to correctly guess the number the game has randomly selected. The game is for fun, for people of all ages and can be as challenging as the user would like it to be. 
+The user has five attempts to correctly guess the number the game has randomly selected. The game is for fun, for people of all ages and can be as challenging as the user would like it to be. If the user is looking for a straightforward relaxing game they can choose the "easy" difficulty or if they want something very challenging they can select the "extreme" difficulty. The different levels should allow the game to appeal to a wider audience. 
 
 [Live version of the game](https://higher-or-lower131-f3d3fa4260b3.herokuapp.com/)
 
