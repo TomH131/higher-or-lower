@@ -31,7 +31,7 @@ def check_difficulty():
             return difficulty
         else:
             print(
-                """Sorry, please select one of the difficulty options:
+                """Sorry, please enter one of the difficulty options:
 easy, medium, hard or extreme.\n"""
             )
 

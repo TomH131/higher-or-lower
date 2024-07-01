@@ -7,8 +7,8 @@ The user has five attempts to correctly guess the number the game has randomly s
 
 ![Responsive mockup](assets/images/higher-or-lower-mockup.png)
 
-## Flow chart
-I designed a flow chart to show the logic as the user progresses through the game.
+## Game logic
+The below flow chart shows the game logic as the user progresses.
 
 ![Flow chart](assets/images/project-flow-chart.png)
 
@@ -17,11 +17,21 @@ The game begins with an introduction that explains what the user needs to do and
 
 ![Opening message and choosing difficulty](assets/images/opening-and-difficulty.png)
 
-Once a difficulty has been selected a number is randomly generated and the terminal asks the user to input their first guess. Easy is a number between 1 and 25 as it still poses a challenge but with 5 attempts it is definitely doable. Medium is 1 to 100 as that feels like a normal challenge and hard is between 1 and 200 to pose a proper challenge. I then later added in the extreme difficulty of 1 to 1000 for people who are looking for a real challenge. 
+Once a difficulty has been selected, a number is randomly generated, and the terminal asks the user to input their first guess. The ranges for each difficulty level are as follows:
+
+ - Easy: 1 to 25
+ - Medium: 1 to 100
+ - Hard: 1 to 200
+ - Extreme: 1 to 1000
 
 ![Input guess](assets/images/input-guess.png)
 
-After each guess has been made the user is given feedback, letting them know how many attempts they have left, whether they need to guess a higher or lower number and also a temperature system to give them some idea of how close to the answer they are. If the user guesses a number within 2 of the correct they receive the message "You're scorching!" so they know they are very close to the correct answer. The message is "You're warm." if they are within 10 and "You're cold." if they are within 25. If their guess is over 25 then they receive the message "You're freezing.". 
+After each guess, the user receives feedback, indicating how many attempts they have left, whether they need to guess a higher or lower number, and a temperature system to hint how close they are to the correct answer. The feedback messages are:
+
+ - "You're scorching!" if within 2 of the correct answer.
+ - "You're warm." if within 10.
+ - "You're cold." if within 25.
+ - "You're freezing." if over 25 away.
 
 ![Feedback](assets/images/feedback.png)
 
@@ -50,9 +60,21 @@ Where the user needs to input data I have tested the input in the following ways
  - A space before and after the input.
  - Empty data input
 
- All possible responses are handled by the code and where necessary they ask the user to input their response in the correct format. The user receives a message if their guess is outside the range. For example if they choose "easy" and then guess a number higher than 25 they receive some feedback asking for another guess within the range.
+ All possible responses are handled by the code and where necessary they ask the user to input their response in the correct format. The user receives a message if their guess is outside the range. For example if they choose "easy" and then guess a number higher than 25 they receive some feedback asking for another guess within the range without using up one of their attempts.
 
  ![Outside the range feedback](assets/images/range-feedback.png)
+
+ The below is the response if something other than the difficulty options is entered.
+
+ ![Wrong difficulty input](assets/images/wrong-difficulty-input.png)
+
+ The below is the response if the user inputs some letters rather than a number when making a guess.
+
+ ![Not a number](assets/images/not-number-input.png)
+
+ The below is the reponse if anything other than yes or no is entered when asked about playing another game.
+
+ ![Yes or no input](assets/images/yes-no-input.png)
 
  ## Deployment
  This project has been deployed on the Code Institute's mock terminal for Heroku.
