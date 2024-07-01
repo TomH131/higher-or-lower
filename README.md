@@ -60,30 +60,30 @@ Where the user needs to input data I have tested the input in the following ways
  - A space before and after the input.
  - Empty data input
 
- All possible responses are handled by the code and where necessary they ask the user to input their response in the correct format. The user receives a message if their guess is outside the range. For example if they choose "easy" and then guess a number higher than 25 they receive some feedback asking for another guess within the range without using up one of their attempts.
+All possible responses are handled by the code and where necessary they ask the user to input their response in the correct format. The user receives a message if their guess is outside the range. For example if they choose "easy" and then guess a number higher than 25 they receive some feedback asking for another guess within the range without using up one of their attempts.
 
- ![Outside the range feedback](assets/images/range-feedback.png)
+![Outside the range feedback](assets/images/range-feedback.png)
 
- The below is the response if something other than the difficulty options is entered.
+Below is the response if something other than the difficulty options is entered.
 
- ![Wrong difficulty input](assets/images/wrong-difficulty-input.png)
+![Wrong difficulty input](assets/images/wrong-difficulty-input.png)
 
- The below is the response if the user inputs some letters rather than a number when making a guess.
+Below is the response if the user inputs letters instead of a number when making a guess.
 
- ![Not a number](assets/images/not-number-input.png)
+![Not a number](assets/images/not-number-input.png)
 
- The below is the reponse if anything other than yes or no is entered when asked about playing another game.
+Below is the response if anything other than "yes" or "no" is entered when asked about playing another game.
 
- ![Yes or no input](assets/images/yes-no-input.png)
+![Yes or no input](assets/images/yes-no-input.png)
 
- ## Deployment
- This project has been deployed on the Code Institute's mock terminal for Heroku.
+## Deployment
+This project has been deployed on the Code Institute's mock terminal for Heroku.
 
- Steps taken for deployment:
-  - Create a new app in Heroku.
-  - Set the buildpacks to .Python and .NodeJS in that order.
-  - Link the new app to the repository in GitHub.
-  - Deploy the app.
+Steps taken for deployment:
+ - Create a new app in Heroku.
+ - Set the buildpacks to .Python and .NodeJS in that order.
+ - Link the new app to the repository in GitHub.
+ - Deploy the app.
 
 ## Credits
 - Code Institute for the deployment terminal
