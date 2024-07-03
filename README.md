@@ -81,7 +81,7 @@ This project has been deployed on the Code Institute's mock terminal for Heroku.
 
 Steps taken for deployment:
  - Create a new app in Heroku.
- - Set the buildpacks to .Python and .NodeJS in that order.
+ - Set the buildpacks to `Python` and `NodeJS` in that order.
  - Link the new app to the repository in GitHub.
  - Deploy the app.
 

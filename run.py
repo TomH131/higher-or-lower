@@ -1,4 +1,5 @@
 from random import randint
+import sys
 
 
 def random_number(difficulty):
@@ -23,7 +24,7 @@ def check_difficulty():
     """
     while True:
         difficulty = (
-            input("Choose the difficulty level (easy, medium, hard or extreme): \n")
+            input("Choose your difficulty (easy, medium, hard or extreme): \n")
             .lower()
             .strip()
         )
@@ -151,7 +152,7 @@ def new_game():
             start_game()
         elif response == "no":
             print("Thank you for playing.")
-            return False
+            sys.exit()
         else:
             print("Invalid input. Please enter 'yes or 'no'.")
 
